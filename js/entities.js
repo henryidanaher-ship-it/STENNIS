@@ -198,9 +198,11 @@ class CPU extends Entity {
     // Touch logic
     if (this.canTouch(ball)) {
       const spread = this.profile.aimSpread;
-      // Aim toward player's half with some spread
-      const aimX = C.CANVAS_W * 0.25 + (Math.random() - 0.5) * spread * 2;
-      const aimY = C.CANVAS_H / 2  + (Math.random() - 0.5) * spread * 2;
+      // Vary depth and target corners
+      const depth  = 0.08 + Math.random() * 0.22;          // 0.08–0.30 of canvas width
+      const topBot = Math.random() < 0.5 ? 0.20 : 0.80;    // aim top or bottom third
+      const aimX = C.CANVAS_W * depth + (Math.random() - 0.5) * spread;
+      const aimY = C.CANVAS_H * topBot + (Math.random() - 0.5) * spread * 1.5;
 
       if (!this.settled && ball.vz < 2 && this.touchCount === 0) {
         this.settleTouch(ball);

@@ -241,8 +241,15 @@
     // CPU auto-serve
     if (state === STATE.SERVE && servingSide === 'cpu') {
       if (--cpuServeTimer <= 0) {
-        const aimX = C.CANVAS_W * 0.25 + (Math.random() - 0.5) * 80;
-        const aimY = C.CANVAS_H / 2   + (Math.random() - 0.5) * 80;
+        const zones = [
+          { x: 0.11, y: 0.22 },
+          { x: 0.11, y: 0.78 },
+          { x: 0.22, y: 0.28 },
+          { x: 0.22, y: 0.72 },
+        ];
+        const z = zones[Math.floor(Math.random() * zones.length)];
+        const aimX = C.CANVAS_W * z.x + (Math.random() - 0.5) * 30;
+        const aimY = C.CANVAS_H * z.y + (Math.random() - 0.5) * 30;
         cpu.shootTouch(ball, aimX, aimY, C.CPU_SERVE_SPEED, C.SHOOT_VZ * 0.75);
         state = STATE.PLAYING;
       }

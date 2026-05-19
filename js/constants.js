@@ -23,7 +23,7 @@ const C = {
   SETTLE_FORWARD: 1.2,  // forward nudge added toward opponent on settle
 
   // Shot values
-  CPU_SERVE_SPEED: 5.5,  // softer than a rally shot so serve is returnable
+  CPU_SERVE_SPEED: 6.5,  // softer than a rally shot so serve is returnable
   SHOOT_SPEED: 8.5,
   SHOOT_VZ: 9.0,
   SPIKE_SPEED: 13.0,
@@ -52,7 +52,7 @@ const C = {
   // Difficulty profiles — shootSpeed is the CPU's equivalent of charge power
   DIFFICULTY: {
     easy:   { speed: 2.8,  reactionDelay: 22, aimSpread: 42, shootSpeed: 5.0 },
-    medium: { speed: 4.0,  reactionDelay: 9,  aimSpread: 18, shootSpeed: 7.0 },
+    medium: { speed: 4.6,  reactionDelay: 5,  aimSpread: 10, shootSpeed: 7.8 },
     hard:   { speed: 5.8,  reactionDelay: 0,  aimSpread: 4,  shootSpeed: 9.0 }
   }
 };
